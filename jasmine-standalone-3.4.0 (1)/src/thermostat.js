@@ -7,7 +7,7 @@ function Thermostat(temperature = 20) {
 };
 
 Thermostat.prototype.upTemp = function(tempRaise) {
-  this.modecheck
+  this.modecheck();
   this.temperature += tempRaise
   if (this.temperature > this.maxtemp) {
     this.temperature = this.maxtemp
@@ -22,10 +22,10 @@ Thermostat.prototype.downTemp = function(tempLower) {
 };
 
 Thermostat.prototype.modecheck = function() {
-  if (this.mode == "normal") {
-    this.maxtemp = 32
+  if (this.mode == "powersave") {
+    this.maxtemp = 25;
   }
   else {
-    this.maxtemp = 25
+    this.maxtemp = 32;
   };
 };
