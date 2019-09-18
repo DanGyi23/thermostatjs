@@ -33,3 +33,5 @@ Thermostat.prototype.modecheck = function() {
 Thermostat.prototype.reset = function() {
   this.temperature = 20;
 };
+
+

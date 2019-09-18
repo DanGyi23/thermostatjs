@@ -41,5 +41,20 @@ describe("Thermostat", function() {
     })
   })
 
+  describe("energyUsage", function() {
+    it("returns low-usage energy usage based on temperature < 18 degrees", function() {
+      thermo.downTemp(3)
+      expect(thermo.energyUsage).toEqual("low-usage")
+    });
 
+    it("returns medium-usage energy usage based on temperature 18-24 degrees", function () {
+      expect(thermo.energyUsage).toEqual("medium-usage")
+    });
+
+    it("returns high-usage energy usage based on temperature > 24 degrees", function () {
+      thermo.upTemp(6);
+      expect(thermo.energyUsage).toEqual("high-usage")
+    });
+    
+  });
 });
