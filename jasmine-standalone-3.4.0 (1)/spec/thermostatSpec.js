@@ -14,8 +14,7 @@ describe("Thermostat", function() {
     });
 
     it("only raises the temp to 25 degrees when powersave mode is on", function() {
-      thermo.mode = "powersave";
-      thermo.modecheck
+      thermo.modecheck();
       thermo.upTemp(15);
       expect(thermo.temperature).toEqual(25);
     })
@@ -57,4 +56,21 @@ describe("Thermostat", function() {
     });
 
   });
+
+  describe("switchCheck", function() { 
+    it("sets temperature to 25 if temperature is above maxtemp once powersave is switched on", function() {
+      thermo.upTemp(15);
+      thermo.switchMode();
+      thermo.switchCheck();
+      expect(thermo.temperature).toEqual(25)
+    })
+  })
+
+  describe("switchMode", function () {
+    it("switches mode between Powersave and Normal", function () {
+      expect(thermo.mode).toEqual("Powersave")
+      thermo.switchMode();
+      expect(thermo.mode).toEqual("Normal")
+    })
+  })
 });

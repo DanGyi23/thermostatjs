@@ -30,6 +30,15 @@ Thermostat.prototype.modecheck = function() {
   };
 };
 
+Thermostat.prototype.switchMode = function() {
+  if (this.mode == "Powersave") {
+    this.mode = "Normal"
+  }
+  else {
+    this.move = "Powersave"
+  };
+};
+
 Thermostat.prototype.switchCheck = function() {
   if (this.temperature > this.maxtemp) {
     this.temperature = this.maxtemp
