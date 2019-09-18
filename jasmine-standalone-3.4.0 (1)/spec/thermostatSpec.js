@@ -33,5 +33,13 @@ describe("Thermostat", function() {
     })
   });
 
+  describe("reset", function() {
+    it("resets the thermostat temperature to 20 degrees", function() {
+      thermo.upTemp(51);
+      thermo.reset();
+      expect(thermo.temperature).toEqual(20)
+    })
+  })
+
 
 });
