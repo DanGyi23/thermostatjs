@@ -2,7 +2,7 @@ const MINTEMP = 10;
 
 function Thermostat(temperature = 20) {
   this.temperature = temperature;
-  this.mode = "powersave";
+  this.mode = "Powersave";
   this.maxtemp = 25;
 };
 
@@ -22,13 +22,19 @@ Thermostat.prototype.downTemp = function(tempLower) {
 };
 
 Thermostat.prototype.modecheck = function() {
-  if (this.mode == "powersave") {
+  if (this.mode == "Powersave") {
     this.maxtemp = 25;
   }
   else {
     this.maxtemp = 32;
   };
 };
+
+Thermostat.prototype.switchCheck = function() {
+  if (this.temperature > this.maxtemp) {
+    this.temperature = this.maxtemp
+  }; 
+}
 
 Thermostat.prototype.reset = function() {
   this.temperature = 20;
