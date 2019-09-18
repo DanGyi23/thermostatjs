@@ -2,6 +2,7 @@ $(document).ready(function () {
   var thermostat = new Thermostat;
   $('#temperature').text("Temperature: " + thermostat.temperature + " Degrees");
   $('#powersavingmode').text("Energy Mode: " + thermostat.mode)
+  $('#powersavingmode').css("color", "green")
   $('#energyconsumption').text("Energy usage: " + thermostat.energyUsage())
 
   $('#temperature-down').click(function () {
@@ -28,6 +29,7 @@ $(document).ready(function () {
     thermostat.switchCheck();
     $('#temperature').text("Temperature: " + thermostat.temperature + " Degrees");
     $('#powersavingmode').text("Energy Mode: " + thermostat.mode)
+    $('#powersavingmode').css("color", "green")
     $('#energyconsumption').text("Energy usage: " + thermostat.energyUsage())
   })
 
@@ -36,6 +38,7 @@ $(document).ready(function () {
     thermostat.downTemp
     $('#temperature').text("Temperature: " + thermostat.temperature + " Degrees");
     $('#powersavingmode').text("Energy Mode: " + thermostat.mode)
+    $('#powersavingmode').css("color", "red")
   })
 
 });
