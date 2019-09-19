@@ -64,12 +64,14 @@ $(document).ready(function () {
     $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=70433ce8b9658ef0413db1586e9b120d&units=metric', function(data) {
       $('#current-temperature').text(data.main.temp);
       $('#selected-city').text(data.name);
+      $('#weather-description').text(data.weather[0]['main'])
     })
   })
 
   $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=70433ce8b9658ef0413db1586e9b120d&units=metric', function(data) {
     $('#selected-city').text(data.name);
     $('#current-temperature').text(data.main.temp);
+    $('#weather-description').text(data.weather[0]['main'])
   });
 
 });
